@@ -22,7 +22,7 @@
 
 package balancedBinaryTree;
 
-//import java.math.*;
+import dataStructures.*;
 
 class Solution {
 	public boolean balancedBinaryTree(TreeNode root) {
