@@ -99,8 +99,10 @@ public class BSTIterator {
 		input.right.left = new TreeNode(12);
 		input.right.right = new TreeNode(15);
 		input.right.right.left = new TreeNode(14);
-		//BSTIterator_2 itr = new BSTIterator_2(input);
+		
 		BSTIterator_1 itr = new BSTIterator_1(input);
+		BSTIterator_2 itr2 = new BSTIterator_2(input);
 		while(itr.hasNext()) System.out.println(itr.next());
+		while(itr2.hasNext()) System.out.println(itr2.next());
 	}
 }
