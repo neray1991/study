@@ -51,6 +51,30 @@ class PreOrder {
 		}
 		return res;
 	}
+	public List<Integer> preOrder_2(TreeNode root) {
+		List<Integer> res = new ArrayList<Integer>();
+		if (root == null) return res;
+		TreeNode cur = root;
+		while(cur != null) {
+			if (cur.left == null) {
+				res.add(cur.val);
+				cur = cur.right;
+			} else {
+				TreeNode node = cur.left;
+				while (node.right != null && node.right != cur)
+					node = node.right;
+				if (node.right == null) {
+					node.right = cur;
+					res.add(cur.val);
+					cur = cur.left;
+				} else {
+					node.right = null;
+					cur = cur.right;
+				}
+			}
+		}
+		return res;
+	}
 }
 
 public class PreOrderTraversal {
@@ -63,7 +87,7 @@ public class PreOrderTraversal {
 		input.right.right.left = new TreeNode(14);
 	
 		System.out.println(new PreOrder().preOrder_1(input));
-	//	System.out.println(new PreOrder().preOrder_2(input));
+		System.out.println(new PreOrder().preOrder_2(input));
 		System.out.println(new PreOrder().preOrderRe(input));
 	}
 }
