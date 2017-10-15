@@ -41,7 +41,10 @@ class Solution {
 		for (int i = start; i < candidates.length && target >= candidates[i]; ++i) {
 			path.add(candidates[i]);
 			combinationSumRe(candidates, target - candidates[i], i, path, res);
-			path.remove(path.size() - 1);
+			// Recursive function will keep running until target=0 or target<candidates[i](means this ways is not through).
+			// Either way we need to go back to the VERY BEGINNING. The following line make sure the path starts from not only
+			// candidates[0], but candidates[i].
+			path.remove(path.size() - 1); 
 		}
 	}
 }
