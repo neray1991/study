@@ -32,7 +32,7 @@ import java.util.*;
 import dataStructures.TreeNode;
 
 class LevelOrder {
-	public void levelOrderTraversal(TreeNode root) {
+	public static void levelOrderTraversal(TreeNode root) {
 		ArrayList<TreeNode> list = new ArrayList<TreeNode>();
 		if (root != null) list.add(root);
 		while (!list.isEmpty()) {
@@ -50,7 +50,7 @@ class LevelOrder {
 		}
 	}
 	
-	public List<List<Integer>> levelOrder_1(TreeNode root) {
+	public static List<List<Integer>> levelOrder_1(TreeNode root) {
 		List<List<Integer>> res = new ArrayList<List<Integer>>();
 		if (root == null) return res;
 		Queue<TreeNode> q = new LinkedList<TreeNode>();
@@ -74,14 +74,14 @@ class LevelOrder {
 		return res;
 	}
 	
-	public List<List<Integer>> levelOrder_2(TreeNode root) {
+	public static List<List<Integer>> levelOrder_2(TreeNode root) {
 		List<List<Integer>> res = new ArrayList<List<Integer>>();
 		if(root == null) return res;
 		levelOrderRe(root, 0, res);
 		return res;
 	}
 	
-	void levelOrderRe(TreeNode root, int level, List<List<Integer>> res) {
+	static void levelOrderRe(TreeNode root, int level, List<List<Integer>> res) {
 		if(root == null) return;
 		if(level == res.size()) res.add(new ArrayList<Integer>());
 		res.get(level).add(root.val);
@@ -99,10 +99,10 @@ public class LevelOrderTraversal {
 		input.right.right = new TreeNode(15);
 		input.right.right.left = new TreeNode(14);
 		
-		new LevelOrder().levelOrderTraversal(input);
-		List<List<Integer>> res = new LevelOrder().levelOrder_1(input);
+		LevelOrder.levelOrderTraversal(input);
+		List<List<Integer>> res = LevelOrder.levelOrder_1(input);
 		System.out.println(res);
-		List<List<Integer>> res2 = new LevelOrder().levelOrder_2(input);
+		List<List<Integer>> res2 = LevelOrder.levelOrder_2(input);
 		System.out.println(res2);
 	}
 }
