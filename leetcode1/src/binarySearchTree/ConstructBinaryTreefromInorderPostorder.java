@@ -14,7 +14,7 @@
 package binarySearchTree;
 
 import dataStructures.TreeNode;
-//import java.util.*;
+import java.util.*;
 
 public class ConstructBinaryTreefromInorderPostorder {
 	public TreeNode buildTree(int[] inorder, int[] postorder) {
@@ -27,7 +27,7 @@ public class ConstructBinaryTreefromInorderPostorder {
 		if (e2 < s2) return null;
 		if (s2 == e2) return new TreeNode(postorder[e2]);
 		int j = -1;
-		for (int i = s1; i < e1; i++) {
+		for (int i = s1; i <= e1; i++) {
 			if (inorder[i] == postorder[e2]) {
 				j = i;
 				break;
@@ -45,6 +45,7 @@ public class ConstructBinaryTreefromInorderPostorder {
 		int[] postorder = {5, 12, 14, 15, 13, 10};
 		int[] inorder = {5, 10, 12, 13, 14, 15};
 		TreeNode root = new ConstructBinaryTreefromInorderPostorder().buildTree(inorder, postorder);
-		new LevelOrder().levelOrderTraversal(root);
+		List<List<Integer>>res = LevelOrder.levelOrder_1(root);
+		System.out.println(res);
 	}
 }
