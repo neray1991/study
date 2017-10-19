@@ -39,7 +39,7 @@ public class LevelOrderTraversalII {
 		input.right.right = new TreeNode(15);
 		input.right.right.left = new TreeNode(14);
 	
-		List<List<Integer>> res = new LevelOrder().levelOrder_1(input);
+		List<List<Integer>> res = LevelOrder.levelOrder_1(input);
 		Collections.reverse(res);
 		System.out.println(res);
 	}
