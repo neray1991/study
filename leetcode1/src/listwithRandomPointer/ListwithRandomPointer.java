@@ -138,7 +138,7 @@ public class ListwithRandomPointer {
 				input.get(i).next = input.get(i + 1);
 			int rand = RandomStruct.getRandomInt(input.size() - 1);
 			if (rand == 0)
-				//input.get(i).random = null;
+				//input.get(i).random = null; No null pointer here to make print easier
 				input.get(i).random = input.get(i);
 			else
 				input.get(i).random = input.get(rand);
@@ -148,8 +148,8 @@ public class ListwithRandomPointer {
 		RandomListNode res3 = new ListwithRandomPointer().copyRandomList_3(input.get(0));
 		RandomListNode res4 = new ListwithRandomPointer().copyRandomList_4(input.get(0));
 		for (int i = 0; i < input.size(); i++) {
-			System.out.println(input.get(i).label + "," + res1.label+ "," + res2.label + "," + res3.label + "," + res4.label);
-			System.out.println("Random:"+ input.get(i).random.label + "," + res1.random.label+ "," + res2.random.label + "," + res3.random.label + "," + res4.random.label);
+			System.out.println("next  :" + input.get(i).label + "," + res1.label+ "," + res2.label + "," + res3.label + "," + res4.label);
+			System.out.println("Random:" + input.get(i).random.label + "," + res1.random.label+ "," + res2.random.label + "," + res3.random.label + "," + res4.random.label);
 			res1 = res1.next;
 			res2 = res2.next;
 			res3 = res3.next;
