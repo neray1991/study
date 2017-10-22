@@ -13,22 +13,14 @@
  Solution: dummy head...
  */
 
-package addTwoNumbers;
+package Calculate;
 
+import dataStructures.ListNode;
 
-class ListNode {
-	int num;
-	ListNode next;
-	ListNode(int x) {
-		num = x;
-		next = null;
-	}
-}
-
-class Solution {
+public class AddTwoNumbers {
 	public ListNode addTwoNumbers(ListNode a, ListNode b) {
 		if (a == null && b == null) return null;
-		ListNode head = new ListNode(a.num + b.num);
+		ListNode head = new ListNode(a.val + b.val);
 		ListNode prev = head;
 		int carry = 0;
 		a = a.next;
@@ -36,11 +28,11 @@ class Solution {
 		while (a != null || b != null) {
 			int sum = carry;
 			if (a != null) {
-				sum += a.num;
+				sum += a.val;
 				a = a.next;
 			}
 			if (b != null) { 
-				sum += b.num;
+				sum += b.val;
 				b = b.next;
 			}
 			carry = sum / 10;
@@ -51,9 +43,7 @@ class Solution {
 		if (carry > 0) prev.next = new ListNode(carry); 
 		return head;
 	}
-}
-
-public class AddTwoNumbers {
+	
 	public static void main (String args[]) {
 		ListNode a = new ListNode(1);
 		a.next = new ListNode(2);
@@ -64,9 +54,9 @@ public class AddTwoNumbers {
 		b.next.next = new ListNode(6);
 		b.next.next.next = new ListNode(9);
 		
-		ListNode res = new Solution().addTwoNumbers(a, b);
+		ListNode res = new AddTwoNumbers().addTwoNumbers(a, b);
 		while (res != null) {
-			System.out.println(res.num);
+			System.out.println(res.val);
 			res = res.next;
 		}
 	}

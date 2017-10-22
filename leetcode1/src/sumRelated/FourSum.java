@@ -22,11 +22,11 @@
 + Solution: Similar to 3Sum, 2Sum.
 + */
 
-package fourSum;
+package sumRelated;
 
 import java.util.*;
 
-class Solution {
+public class FourSum {
 	public List<List<Integer>> fourSum(int[] num, int target) {
 		List<List<Integer>> res = new ArrayList<List<Integer>>();
 		int N = num.length;
@@ -58,12 +58,10 @@ class Solution {
 		}
 		return res;
 	}
-}
-
-public class FourSum {
+	
 	public static void main(String args[]) {
 		int[]input = {1,2,3,4,5,-1,-5,0,-50};
-		List<List<Integer>> result = new Solution().fourSum(input, 5);
+		List<List<Integer>> result = new FourSum().fourSum(input, 5);
 		System.out.println(result);
 	}
 }

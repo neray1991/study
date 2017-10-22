@@ -13,12 +13,12 @@
  Solution: Similar to 3Sum, taking O(n^2) time complexity.
  */
 
-package threeSumClosest;
+package sumRelated;
 
 import java.util.*;
 
-class Solution {
-    public int threeSumClosest(int[] num, int target) {
+public class ThreeSumClosest {
+	public int threeSumClosest(int[] num, int target) {
         int N = num.length;
         if (N < 3) return 0;
         int res = num[0] + num[1] + num[2];
@@ -38,12 +38,10 @@ class Solution {
         }
         return res;
     }
-}
-
-public class ThreeSumClosest {
+	
 	public static void main(String args[]) {
 		int[]input = {1,2,3,4,5,-1,-5,0,-50};
-		int result = new Solution().threeSumClosest(input, 20);
+		int result = new ThreeSumClosest().threeSumClosest(input, 20);
 		System.out.println(result);
 	}
 }

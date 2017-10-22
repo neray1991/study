@@ -16,11 +16,11 @@
  (-1, -1, 2)
  Solution: Simplify '3sum' to '2sum' O(n^2). http://en.wikipedia.org/wiki/3SUM
 */
-package threeSum;
+package sumRelated;
 
 import java.util.*;
 
-class Solution {
+public class ThreeSum {
 	public List<List<Integer>> threeSum(int[] num) {
 		List<List<Integer>> res = new ArrayList<List<Integer>>();
 		Arrays.sort(num);
@@ -48,12 +48,10 @@ class Solution {
 		}
 		return res;
 	}
-}
-
-public class ThreeSum {
+	
 	public static void main(String args[]) {
 		int[]input = {1,2,3,4,5,-1,-5,0,-50};
-		List<List<Integer>> result = new Solution().threeSum(input);
+		List<List<Integer>> result = new ThreeSum().threeSum(input);
 		System.out.println(result);
 	}
 	

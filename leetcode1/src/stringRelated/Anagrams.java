@@ -10,12 +10,12 @@
  Solution: Sort the string to see if they're anagrams.
  */
 
-package anagrams;
+package stringRelated;
 
 import java.util.*;
 import java.util.Map.Entry;
 
-class Solution {
+public class Anagrams {
 	public ArrayList<String> anagrams(String[] str) {
 		ArrayList<String> res = new ArrayList<String>();
 		HashMap<String, ArrayList<String>> group = new HashMap<String, ArrayList<String>>();
@@ -41,9 +41,7 @@ class Solution {
 		}
 		return res;
 	}
-}
-
-public class Anagrams {
+	
 	public static void main(String args[]){
 		String[] input = {"aadbc",
 		                  "bcaad",
@@ -54,7 +52,7 @@ public class Anagrams {
 		                  "abadc",
 		                  "gdo",
 		                  "aaaad"};
-		ArrayList<String> res = new Solution().anagrams(input);
+		ArrayList<String> res = new Anagrams().anagrams(input);
 		System.out.println(res);
 	}
 }

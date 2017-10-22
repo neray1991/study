@@ -14,11 +14,9 @@
 + Solution: '1'-'0' = 1.
 + */
 
-package addBinary;
+package Calculate;
 
-//import java.util.*;
-
-class Solution {
+public class AddBinary {
 	public String addBinary (String a, String b) {
 		StringBuffer res = new StringBuffer();
 		int i = a.length() - 1, j = b.length() - 1;
@@ -33,11 +31,9 @@ class Solution {
 		if (carry == 1) res.insert(0, '1');
 		return res.toString();
 	}
-}
-
-public class AddBinary {
+	
 	public static void main(String args[]) {
-		String result = new Solution().addBinary("1011010", "111100001010101001");
+		String result = new AddBinary().addBinary("1011010", "111100001010101001");
 		System.out.println(result);
 	}
 }

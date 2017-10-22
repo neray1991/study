@@ -27,9 +27,9 @@ public class DecodeWays {
 		for (int i = 1; i < N; i++) {
 			if (s.charAt(i) == '0') f1 = 0;
 			int num = s.charAt(i) - '0' + (s.charAt(i - 1) - '0') * 10;
-			if (num < 10 || num > 26) {
+			/*f1 means ways up to ith char, f0 means ways up to i-1th char*/
+			if (num < 10 || num > 26)
 				f0 = 0;
-			}
 			int tmp = f1;
 			f1 = f1 + f0;
 			f0 = tmp;
@@ -38,7 +38,8 @@ public class DecodeWays {
 	}
 	
 	public static void main(String args[]) {
-		String input = "123456789120102345673213";
+		//String input = "123456789120102345673213";
+		String input = "12121";//if nothing goes wrong, this will be a fibonacci series
 		System.out.println(DecodeWays.numDecodings(input));
 	}
 }
