@@ -14,7 +14,7 @@
 + Solution: '1'-'0' = 1.
 + */
 
-package Calculate;
+package calculate;
 
 public class AddBinary {
 	public String addBinary (String a, String b) {

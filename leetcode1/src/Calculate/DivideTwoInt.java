@@ -1,4 +1,4 @@
-package Calculate;
+package calculate;
 
 /*
 Author:     King, higuige@gmail.com
