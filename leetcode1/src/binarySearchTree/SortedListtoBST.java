@@ -22,7 +22,6 @@
 package binarySearchTree;
 
 import java.util.List;
-
 import dataStructures.*;
 
 public class SortedListtoBST {
@@ -51,7 +50,7 @@ public class SortedListtoBST {
 	
 	public TreeNode sortedListtoBSTRe2 (ListNode start, ListNode end){
 		if (start == end ) return null;
-		ListNode pre = null;
+		//ListNode pre = null;
 		ListNode slow = start;
 		ListNode fast = start;
 		while (fast != end && fast.next != end) {
