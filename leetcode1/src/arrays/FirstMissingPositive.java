@@ -18,7 +18,43 @@ Solution: Although we can only use constant space, we can still exchange element
 */
 
 public class FirstMissingPositive {
+	public static int firstMissingPositive_1(int[] A) {
+		for (int i = 0; i < A.length; i++)
+			if (A[i] <= 0) A[i] = A.length + 2;
+		for (int i = 0; i < A.length; i++) {
+			if (Math.abs(A[i]) < A.length + 1) {
+				int cur = Math.abs(A[i]) - 1;
+				A[cur] = -Math.abs(A[cur]);
+			}
+		}
+		for (int i = 0; i < A.length; i++)
+			if(A[i] > 0) return i+1;
+		return A.length + 1;
+	}
+	
+	public static int firstMissingPositive_2(int A[], int n) {
+		for (int i = 0; i < n; i++) {
+			while (A[i] >= 1 && A[i] <= n && A[i] != A[A[i]-1]) {
+				System.out.println("**"+A[i]);
+				int tmp = A[i];
+				A[i] = A[tmp - 1];
+				A[tmp - 1] = tmp;
+			}
+		}
+		int i = 0;
+		for (i = 0; i < n; i++) {
+			if (A[i] != i + 1) {
+				System.out.println(A[i]+",i="+i);
+				break;
+			}
+		}
+		return i + 1;
+	}
+	
 	public static void main(String args[]) {
-		System.out.println("test");
+		int[] A = {-1, -2, 0, 4, 5, 3, 2, 7, 1};
+		//System.out.println(FirstMissingPositive.firstMissingPositive_1(A));
+		//Don't do the 2 function at the same time. A[] will be modified in the first function.
+		System.out.println(FirstMissingPositive.firstMissingPositive_2(A, A.length));
 	}
 }
