@@ -27,7 +27,7 @@ public class FractiontoDecimal {
 		num = Math.abs(num);
 		den = Math.abs(den);
 		int tmp = num / den;
-		num = num - den * tmp;
+		num = num % den;
 		res.append(tmp);
 		if (num == 0) return res.toString();
 		res.append('.');
@@ -44,7 +44,7 @@ public class FractiontoDecimal {
 			map.put(num, dot++); //This line should be here. put num before we calculate new num. dot indicate the position just behind . in the beginning, so it should be dot++ instead of ++dot.
 			int tmp2 = num * 10 / den;
 			res.append(tmp2);
-			num = num * 10 - tmp2 * den;
+			num = num * 10 % den;
 			System.out.println("*"+num);	
 		}
 		return res.toString();
