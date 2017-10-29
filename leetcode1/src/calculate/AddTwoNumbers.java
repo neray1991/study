@@ -13,7 +13,7 @@
  Solution: dummy head...
  */
 
-package Calculate;
+package calculate;
 
 import dataStructures.ListNode;
 
