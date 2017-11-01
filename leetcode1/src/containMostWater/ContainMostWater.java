@@ -49,5 +49,7 @@ public class ContainMostWater {
 		}
 		System.out.println(Arrays.toString(rand));
 		System.out.println(maxArea(rand));
+		System.out.println(LargestRectinHistogram.largestRectinHistogram(rand));
+		System.out.println(LargestRectinHistogram.largestRectinHistogram_1(rand));
 	}
 }
