@@ -1,5 +1,7 @@
 package stringRelated;
 
+import java.util.Arrays;
+
 /*
 Author:     King, wangjingui@outlook.com
 Date:       Dec 13, 2014
@@ -92,9 +94,38 @@ public class LongestPalindromicSubstring {
 		return s.substring(idx, idx + maxLen);
 	}
 	
+	public static String longestPalindrome_5(String s) {
+		int n = s.length();
+		int idx = 0, maxLen = 0;
+		int mx = 0, id = 0;
+		int[] p = new int[2*n+1];
+		Arrays.fill(p, 0);
+		for (int i = 0; i < 2*n+1; ++i) {
+			p[i] = (mx > i) ? Math.min(p[2*id-i], mx - i) : 0; //2*id-i = id-(i-id), try to find the symetrical position of i, instead of count from the beginning. 
+			int left = i - 1 - p[i], right = i + 1 + p[i];
+			while (left >= 0 && right <= 2*n) {
+				if (left % 2 == 0 || s.charAt(left/2) == s.charAt(right/2)) {
+					++p[i];
+				} else break;
+				--left;
+				++right;
+			}
+			if (i + p[i] > mx) {
+				id = i; mx = i + p[i];
+			}
+			if (p[i] > maxLen) {
+				idx = i; maxLen = p[i];
+			}
+		}
+		System.out.println(Arrays.toString(p));
+		idx = (idx - maxLen) / 2;
+		return s.substring(idx, idx + maxLen);
+	}
+	
 	public static void main(String args[]) {
 		System.out.println(LongestPalindromicSubstring.longestPalindromicSubString("abcddcbbbbbdbbbb"));
 		System.out.println(LongestPalindromicSubstring.longestPalindrome_1("abcddcbbbbbdbbbb"));
 		System.out.println(LongestPalindromicSubstring.longestPalindrome_3("abcddcbbbbbdbbbb"));
+		System.out.println(LongestPalindromicSubstring.longestPalindrome_5("abcddcbbbbbdbbbb"));
 	}
 }
