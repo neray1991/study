@@ -12,7 +12,7 @@ public class RandomStruct {
 		int[] rand = new int[size];
 		for (int i = 0; i < size; i++) {
 			rand[i] = ((int)(range*(Math.random())));
-			//System.out.println(rand[i]);
+			System.out.println(rand[i]);
 		}
 		return rand;
 	}
