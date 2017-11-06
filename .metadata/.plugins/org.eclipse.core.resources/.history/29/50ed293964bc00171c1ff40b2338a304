@@ -64,7 +64,7 @@ public class InsertInterval {
 		int left = 0, right = n - 1;
 		while (left <= right) {
 			int mid = left + (right - left) / 2;
-			if (intervals.get(mid).start > newInterval.start) right = mid - 1;
+			if (intervals.get(mid).start < newInterval.start) right = mid - 1;
 			else left = mid + 1;
 		}
 		int idxStart = right;
@@ -76,9 +76,9 @@ public class InsertInterval {
 		}
 		int idxEnd = left;
 		if (idxStart >= 0 && newInterval.start <= intervals.get(idxStart).end)
-			newInterval.start = intervals.get(idxStart--).start;//idxStart-- execute after this line is done! This is for later use.
+			newInterval.start = intervals.get(idxStart--).start;
 		if (idxEnd < n && newInterval.end >= intervals.get(idxEnd).start)
-			newInterval.end = intervals.get(idxEnd++).end;//idxEnd++, this is the same;
+			newInterval.end = intervals.get(idxEnd++).end;
 		for (int i = 0; i <= idxStart; ++i)
 			res.add(intervals.get(i));
 		res.add(newInterval);

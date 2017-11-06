@@ -1,6 +1,5 @@
 package stringRelated;
 
-import java.util.Arrays;
 
 /*
 Author:     King, wangjingui@outlook.com
@@ -18,6 +17,7 @@ Solution: 1. Time O(n^2), Space O(n^2)
           5. Time O(n), Smaller Space than solution 4. (Manacher's Algorithm)
 */
 
+import java.util.Arrays;
 
 public class LongestPalindromicSubstring {
 	public static String longestPalindromicSubString(String str) {

@@ -1,6 +1,6 @@
 package jumpGame;
 
-import java.util.Arrays;
+import java.util.*;
 
 /*
 Author:     King, wangjingui@outlook.com
