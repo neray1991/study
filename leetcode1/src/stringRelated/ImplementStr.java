@@ -60,8 +60,8 @@ public class ImplementStr {
 	}
 	
 	public static void main(String args[]) {
-		String haystack = "ababbbcababc";
-		String needle = "ababc";
+		String haystack = "ababbbcaabaabca";
+		String needle = "aabaabca";
 		System.out.println(ImplementStr.implementStr_1(haystack, needle));
 		System.out.println(ImplementStr.implementStr_2(haystack, needle));
 	}
