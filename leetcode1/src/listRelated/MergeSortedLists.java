@@ -77,10 +77,10 @@ public class MergeSortedLists {
 		while (k > 1) {
 			List<ListNode> tmp = new ArrayList<ListNode>();
 			for (int i = 0; i < k/2; i++) {
-				tmp.add(merge2Lists(tmp1.get(i), tmp1.get(k-i-1)));
+				tmp.add(merge2Lists(tmp1.get(i), tmp1.get(k-i-1)));//Remember to minus 1 for the index.
 			}
 			if (k % 2 == 1) { 
-				tmp.add(tmp1.get(k/2));
+				tmp.add(tmp1.get(k/2)); //Index k/2 is the (k/2+1)th number of the list.
 				k = k / 2 + 1;
 			} else {
 				k = k / 2;
