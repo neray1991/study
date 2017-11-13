@@ -1,4 +1,4 @@
-package dungeonGame;
+package arrays2D;
 import java.util.Arrays;
 
 /*
