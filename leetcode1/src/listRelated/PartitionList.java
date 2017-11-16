@@ -19,7 +19,7 @@ import dataStructures.ListNode;
 import dataStructures.RandomStruct;
 
 public class PartitionList {
-	//public static void partitionList(ListNode head, int x) {
+	//public static void partitionList(ListNode head, int x) { ** Cannot return void because ListNode head will not be changed as a parameter.
 	public static ListNode partitionList(ListNode head, int x) {
 		if (head == null) return head;
 		ListNode left = head, right = new ListNode(0);
@@ -36,16 +36,9 @@ public class PartitionList {
 		}
 
 		rcur.next = null;
-		//
-		rcur = right.next;
-		while (rcur != null) {
-			System.out.println(rcur.val);
-			rcur = rcur.next;
-		}
-	//	System.out.println("@@head.next="+head.next.val);
-		//
+
 		if (head.val >= x) {
-			System.out.println("^^"+head.next.val);
+			//System.out.println("^^"+head.next.val);
 			left = head.next;
 			head.next = right.next;
 			lcur.next = head;
