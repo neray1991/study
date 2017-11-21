@@ -58,6 +58,10 @@ class Solution {
 		}
 		return;
 	}
+	
+	/*
+	 * This is called Morris traversal. Unlike iterativeSolution, it does not require extra space to traverse the Tree.
+	 */
 	public List<Integer> inorderTraversal(TreeNode root){
 		List<Integer> res = new ArrayList<Integer>();
 		TreeNode cur = root;
