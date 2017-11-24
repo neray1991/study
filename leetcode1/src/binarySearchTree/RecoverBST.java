@@ -68,12 +68,12 @@ public class RecoverBST {
 	public static void main(String args[]) {
 		TreeNode input = new TreeNode(10);
 		input.left = new TreeNode(5);//Should be 5 in BST
-		input.right = new TreeNode(12);
-		input.right.left = new TreeNode(13);
+		input.right = new TreeNode(13);
+		input.right.left = new TreeNode(12);
 		input.right.right = new TreeNode(15);//Should be 15 in BST
 		input.right.right.left = new TreeNode(14);
 		
-		//RecoverBST.recoverBST_1(input);
+		RecoverBST.recoverBST_1(input);
 		new Solution().iterativeSolution(input);
 		//System.out.println(new Solution().inorderTraversal(input));
 	}
