@@ -33,12 +33,15 @@ public class ReverseinGroup {
 		dummy.next = head;
 		ListNode start = dummy;
 		while (start.next != null) {
-			while (k-- > 1) {
+			int i = k;
+			while (i-- > 1) {
+				System.out.println(cur.val);
 				cur = cur.next;
 				if (cur == null) return dummy.next;
 			}
 			ListNode first = start;
 			ListNode tmp = cur.next;
+		//	System.out.println("tmp="+cur.val);
 			cur.next = null;
 			cur = first.next;
 			while (cur.next != null) {
@@ -69,7 +72,7 @@ public class ReverseinGroup {
 		cur = cur.next;
 		cur.next = new ListNode(7);
 		
-		ListNode head = ReverseinGroup.reverseinGroup(cur, 2);
+		ListNode head = ReverseinGroup.reverseinGroup(input, 4);
 		System.out.println("*****");
 		while (head != null) {
 			System.out.println(head.val);
