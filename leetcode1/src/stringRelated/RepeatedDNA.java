@@ -36,7 +36,7 @@ public class RepeatedDNA {
 			if (map.containsKey(x)) {
 				if (map.get(x) == 1) {
 					res.add(convert2Str(x));
-					map.put(x, -1);
+					map.put(x, -1); //That's why we can't use boolean here.
 				}
 			} else {
 				map.put(x, 1);

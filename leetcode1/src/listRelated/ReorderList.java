@@ -26,7 +26,7 @@ public class ReorderList {
 			cur = cur.next;
 			len++;
 		}
-		int mid = len / 2;  //mid = len / 2, 
+		int mid = len / 2;
 		ListNode middle = head;
 		while (mid-- > 0)
 			middle = middle.next;
