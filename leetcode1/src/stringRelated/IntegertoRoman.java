@@ -12,6 +12,8 @@ Input is guaranteed to be within the range from 1 to 3999.
 Solution: Buffer the roman numbers.
 */
 
+import java.util.*;
+
 public class IntegertoRoman {
 	public static String intToRoman(int num) {
         int[] values = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 };  
@@ -30,7 +32,28 @@ public class IntegertoRoman {
         return sb.toString();
 	}
 	
+	public static int romanToInt(String s) {
+		HashMap<Character, Integer> map = new HashMap<Character, Integer>();
+		map.put('M', 1000);
+		map.put('D', 500);
+		map.put('C', 100);
+		map.put('L', 50);
+		map.put('X', 10);
+		map.put('V', 5);
+		map.put('I', 1);
+		int res = 0;
+		for (int i = 0; i < s.length(); i++) {
+			if (i < s.length() - 1 && map.get(s.charAt(i)) < map.get(s.charAt(i + 1)))
+				res -= map.get(s.charAt(i));
+			else res += map.get(s.charAt(i));
+		}
+		return res;
+	}
+	
 	public static void main(String args[]) {
-		System.out.println(IntegertoRoman.intToRoman(12));
+		String roman = IntegertoRoman.intToRoman(2912);
+		System.out.println(roman);
+		int integer = IntegertoRoman.romanToInt(roman);
+		System.out.println(integer);
 	}
 }
