@@ -31,7 +31,7 @@ public class SearchRotatedArray {
 				if (num[mid] > num[start] && num[end] < num[start])
 					start = mid + 1;
 				else end = mid - 1;
-			}*/
+			}
 			
 			if (num[start] <= num[end]) {
 				if (num[mid] < k)
@@ -47,7 +47,7 @@ public class SearchRotatedArray {
 					start = mid + 1;
 				else
 					end = mid - 1;
-			}
+			}*/
 		}
 		return -1;
 	}
@@ -74,7 +74,7 @@ public class SearchRotatedArray {
 	
 	public static void main(String args[]) {
 		int[] num = {5,6,7,8,9,1,2,3};
-		System.out.println(SearchRotatedArray.searchRotateArray(num, 3));
+		System.out.println(SearchRotatedArray.searchRotateArray(num, 3));//They got the only right way.
 		System.out.println(SearchRotatedArray.search_0(num, 3));
 	}
 }
