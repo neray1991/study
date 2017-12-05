@@ -56,15 +56,15 @@ public class SingleNumber {
 		int one = 0, twice = 0;
 		for (int num : A) {
 			twice = twice | (one & num);
-			one = one ^ num;
+			one = one ^ num;	//When num appear twice, this line will make the bitmask = 0 in one.
 			int three = one & twice;
-			one = one ^ three;
-			twice = twice ^ three;
+			one = one ^ three; //Clear up the three bitmask on both one
+			twice = twice ^ three;//and twice
 		}
 		return one;
 	}
 	
-	public int singleNumberII_3(int[] A) {
+	public static int singleNumberII_3(int[] A) {
 		int k = 1, n = 3;
 		int[] x = new int[n];
 		x[0] = ~0;
@@ -81,5 +81,7 @@ public class SingleNumber {
 	public static void main(String args[]) {
 		int[] A = {1,1,2,3,3,4,4,5,5};
 		System.out.println(SingleNumber.singleNumber(A));
+		int[] B = {1,1,1,2,3,3,3,4,4,4,5,5,5};
+		System.out.println(SingleNumber.singleNumberII_3(B));
 	}
 }
