@@ -1,6 +1,6 @@
 package arrays2D;
 
-import java.util.Arrays;
+import java.util.*;
 
 /*
 Author:     Andy, nkuwjg@gmail.com
@@ -98,12 +98,41 @@ public class SurrondedRegions {
 			}
 		}
 	}
-	
+    public void solve(char[][] board) {
+        if (board.length == 0 || board[0].length == 0) return;
+        int M = board.length, N = board[0].length;
+        for (int i = 0; i < M; ++i) {
+            for (int j = 0; j < N; ++j) {
+                if (i == 0 || j == 0 || i == M - 1 || j == N -1) {
+                    bfs(board, i, j);
+                }
+            }
+        }
+        for (int i = 0; i < M; ++i)
+            for (int j = 0; j < N; ++j)
+                board[i][j] = (board[i][j] == 'V') ? 'O' : 'X';
+    }
+    public void bfs(char[][] board, int row, int col) {
+        if (board[row][col] != 'O') return;
+        int M = board.length, N = board[0].length;
+        Queue<Integer> q = new LinkedList<Integer>();
+        q.offer(row); q.offer(col);
+        while (q.isEmpty() == false) {
+            int i = q.poll(); int j = q.poll();
+            if (i < 0 || i == M || j < 0 || j == N) continue;
+            if (board[i][j] != 'O') continue;// important to recheck! Including 'V', in case of loop
+            board[i][j] = 'V';
+            q.offer(i-1); q.offer(j);
+            q.offer(i+1); q.offer(j);
+            q.offer(i); q.offer(j-1);
+            q.offer(i); q.offer(j+1);
+        }
+    }
 	public static void main(String args[]) {
 		char[][] board = new char[4][4];
 		board[0] = "XXXX".toCharArray();
-		board[1] = "XOOX".toCharArray();
-		board[2] = "XXOX".toCharArray();
+		board[1] = "OXOX".toCharArray();
+		board[2] = "XOXX".toCharArray();
 		board[3] = "XOXX".toCharArray();
 		/*
 		board[4] = "4..8.3..1".toCharArray();
@@ -113,6 +142,16 @@ public class SurrondedRegions {
 		board[8] = "....8..79".toCharArray();
 		*/
 		SurrondedRegions.surrondedRegions(board);
+		for (int i = 0; i < 4; i++)
+			System.out.println(Arrays.toString(board[i]));
+		
+		System.out.println("******");
+		board[0] = "XXXX".toCharArray();
+		board[1] = "OXOX".toCharArray();
+		board[2] = "XOXX".toCharArray();
+		board[3] = "XOXX".toCharArray();
+
+		new SurrondedRegions().solve(board);
 		for (int i = 0; i < 4; i++)
 			System.out.println(Arrays.toString(board[i]));
 	}
