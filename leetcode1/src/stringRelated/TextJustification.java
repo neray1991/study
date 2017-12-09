@@ -50,7 +50,7 @@ public class TextJustification {
 			int extra = (isLastLine || oneWord) ? 0 : (L - length) % (j - i - 1);
 			for (int k = i + 1; k < j; k++) {//words[j] is not included here!
 				char[] tmp = new char[extra>0?average+1:average];
-				Arrays.fill(tmp, ' ');
+				Arrays.fill(tmp, '*');
 				s.append(tmp);
 				s.append(words[k]);
 				extra--;
@@ -68,6 +68,6 @@ public class TextJustification {
 		String[] words = {
 				"This", "is", "an", "example", "of", "text", "justification."
 		};
-		System.out.println(TextJustification.fullJustify(words, 16));
+		System.out.println(TextJustification.fullJustify(words, 17));
 	}
 }
