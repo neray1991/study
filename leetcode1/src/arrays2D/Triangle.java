@@ -58,7 +58,7 @@ public class Triangle {
 			List<Integer> cur = triangle.get(i);
 			List<Integer> next = triangle.get(i+1);
 			for (int j = 0; j < i + 1; j++) {
-				cur.set(j,  Math.min(next.get(j), next.get(j+1)) + cur.get(j));
+				cur.set(j,  Math.min(next.get(j), next.get(j+1)) + cur.get(j)); //goes from bottom to top is easier.
 			}
 		}
 		return triangle == null ? 0 : triangle.get(0).get(0);

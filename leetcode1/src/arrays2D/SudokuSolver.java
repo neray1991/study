@@ -58,6 +58,8 @@ public class SudokuSolver {
 		board[8] = "....8..79".toCharArray();
 		
 		System.out.println(new SudokuSolver().solveSudoku(board));
+		System.out.println(ValidSudoku.isSudoku(board));
+		System.out.println(ValidSudoku.isSudoku_0(board));
 		for (int i = 0; i < 9; i++)
 			System.out.println(Arrays.toString(board[i]));
 	}
