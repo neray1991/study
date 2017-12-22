@@ -40,8 +40,43 @@ public class TwoSum {
 		return null;
 	}
 	
+	/*
+	Given an array of integers, find how many pairs in the array such that 
+	their sum is bigger than a specific target number. Please return the number of pairs.
+	Example
+	numbers=[2, 7, 11, 15], target=24
+	return 1
+	Challenge
+	Either of the following solutions are acceptable:
+	O(1) Space, O(nlogn) Time
+	Tags Expand 
+	Two Pointers
+	*/
+	public static int SumII(int[] A, int target) {
+		int count = 0, n = A.length;
+		int cur = n - 1;
+		while (cur > 0) {
+			int left = 0;
+			int right = cur - 1;
+			int mid = (left + right) / 2;
+			do {
+				if (A[mid] + A[cur] <= target)
+					left = mid + 1;
+				else 
+					right = mid - 1;
+			} while (right > left);
+			if (left > cur - 1) break;
+			System.out.println(cur - left);
+			count += cur - left;
+			cur--;
+		}
+		return count;
+	}
+	
+	
 	public static void main(String args[]) {
 		int[] A = {2,7,11,15};
 		System.out.println(Arrays.toString(TwoSum.twoSum(A, 9)));
+		System.out.println(TwoSum.SumII(A, 13));
 	}
 }
