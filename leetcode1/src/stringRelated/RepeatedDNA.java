@@ -26,7 +26,7 @@ public class RepeatedDNA {
 		List<String> res = new ArrayList<String>();
 		if (s.length() < 11) return res;
 		int x = 0, i = 0, mask = (1<<20) - 1;
-		for (; i < 10; i++) {
+		for (; i < 10; i++) { //We do 10 chars first, then we can check map.containsKey every next char.
 			x = (x << 2) | mole.get(s.charAt(i));
 		}
 		map.put(x, 1);

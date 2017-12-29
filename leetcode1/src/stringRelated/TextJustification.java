@@ -55,8 +55,8 @@ public class TextJustification {
 				s.append(words[k]);
 				extra--;
 			}
-			char[] tmp = new char[L - s.length()];
-			Arrays.fill(tmp, ' ');
+			char[] tmp = new char[L - s.length()];//s.length()== L except the last line.
+			Arrays.fill(tmp, '*');
 			s.append(tmp);
 			res.add(s.toString());
 			i = j;
