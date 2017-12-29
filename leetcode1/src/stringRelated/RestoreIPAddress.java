@@ -30,16 +30,15 @@ public class RestoreIPAddress {
 			return;
 		}
 		if (num == 1) {
-
 			int tmp = Integer.parseInt(s);
-			if (tmp < 256 && s.charAt(0) != '0' || s == "0") {
+			if (tmp < 256 && s.charAt(0) != '0' || s == "0") {//This is important. "0135" is not allowed.
 				res.add(pattern.substring(1) + "." + s);
 			}
 			return;
 		}
 		num--; //Don't do num-- in the function parameter, num will keep minus one for 3 times!.
 		restoreIPRe(s.substring(1), num, res, pattern + "." + s.substring(0, 1));
-		if (s.charAt(0) == '0') return;
+		if (s.charAt(0) == '0') return;//This is important. "0135" is not allowed.
 		if (s.length() > 2) 
 			restoreIPRe(s.substring(2), num, res, pattern + "." + s.substring(0, 2));
 		if (s.length() > 3 && Integer.parseInt(s.substring(0, 3)) < 256)
@@ -66,7 +65,7 @@ public class RestoreIPAddress {
 	
 	public static void main(String args[]) {
 		//String s = "25525511135";
-		String s = "2552550135";
+		String s = "2552520035";
 		//System.out.println(s.substring(3));
 		System.out.println(RestoreIPAddress.restoreIPAddress(s));
 		String t = "01";

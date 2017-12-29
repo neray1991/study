@@ -30,8 +30,8 @@ class MaxPathSum {
  	}
 	
 	public int maxPathSum(TreeNode root) {
-		int[] res = {Integer.MIN_VALUE};
-		maxPathSumRe(root, res);
+		int[] res = {Integer.MIN_VALUE}; //This is just like a pointer.
+		System.out.println(maxPathSumRe(root, res)); //Check it out here, the return value does not include root.val.
 		return res[0];
 	}
 }

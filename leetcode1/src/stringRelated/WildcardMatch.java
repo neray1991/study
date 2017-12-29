@@ -41,9 +41,9 @@ public class WildcardMatch {
 				i++; j++;
 			} else {
 				if (ii == -1)  return false; //Once * appears in p before we get to this point, we'll have to check until the last char of s.
-				ii++;
-				i = ii;
-				j = jj;
+				ii++; //ii++ here means one char at ii is used to match * at String p.
+				i = ii; //Then we fall back.
+				j = jj; //Fall back to the char right befind *
 			}
 		}
 		while (j < p.length() && p.charAt(j) == '*') j++;

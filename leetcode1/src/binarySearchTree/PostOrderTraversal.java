@@ -99,6 +99,7 @@ public class PostOrderTraversal {
 	public static void main(String args[]) {
 		TreeNode input = new TreeNode(10);
 		input.left = new TreeNode(5);
+		input.left.left = new TreeNode(3);
 		input.right = new TreeNode(13);
 		input.right.left = new TreeNode(12);
 		input.right.right = new TreeNode(15);

@@ -19,7 +19,7 @@ package stringRelated;
 import dataStructures.ListNode;
 
 public class RotateList {
-	public static ListNode rotateList(ListNode head, int k) {
+	public static ListNode rotateList(ListNode head, int k) { //This is not right!
 		if (head == null) return null;
 		ListNode dummy = new ListNode(0);
 		dummy.next = head;
@@ -42,6 +42,25 @@ public class RotateList {
 		return dummy.next;
 	}
 	
+	public static ListNode rotateList_0(ListNode head, int k) {
+		if (head == null) return null;
+		int size = 1;
+		ListNode tail = head, cur = head;
+		while (tail.next != null) {
+			tail = tail.next;
+			size++;
+		}
+		k = k % size;
+		if (k == 0) return head;
+		for (int i = 1; i < size - k; i++) {
+			cur = cur.next;
+		}
+		ListNode newhead = cur.next;
+		cur.next = null;
+		tail.next = head;
+		return newhead;
+	}
+	
 	public static void main(String args[]) {
 		ListNode input = new ListNode(1);
 		ListNode cur = input;
@@ -57,7 +76,7 @@ public class RotateList {
 		cur = cur.next;
 		cur.next = new ListNode(7);
 		
-		ListNode head = RotateList.rotateList(input, 8);
+		ListNode head = RotateList.rotateList_0(input, 2);
 		System.out.println("*****");
 		while (head != null) {
 			System.out.println(head.val);

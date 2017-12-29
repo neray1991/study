@@ -50,7 +50,7 @@ public class WordLadder {
 		Set<String> visited = new HashSet<String>();
 		while (cur.isEmpty() == false) {
 			Queue<String> queue = new LinkedList<String>();
-			while (cur.isEmpty() == false) {
+			while (cur.isEmpty() == false) { //Check out, there are two while loop, this loop will poll every element in cur. Generated words will be in queue.
 				String str = cur.poll();
 				char[] word = str.toCharArray();
 				for (int i = 0; i < word.length; i++) {
@@ -101,7 +101,7 @@ public class WordLadder {
 							(graph.get(end)).add(str);
 							continue;
 						}
-						if (dict.contains(temp) == false) continue;
+						if (dict.contains(temp) == false) continue; //Intermediate, end doesn't have to be in dict.
 						if (visited.contains(temp) == false) {
 							queue.add(temp);
 							if (graph.containsKey(temp) == false) {
@@ -131,19 +131,18 @@ public class WordLadder {
 								ArrayList<String> path,
 								String start, String now) {
 		path.add(now);
-		System.out.println(now);
 		if (now.compareTo(start) == 0) {
 			ArrayList<String> ans = new ArrayList<String>(path);
 			Collections.reverse(ans);
 			res.add(ans);
-			path.remove(path.size() - 1);
+			path.remove(path.size() - 1);//Remove now means remove start, one step back cause we need to find all the ways
 			return;
 		}
 		ArrayList<String> cur = graph.get(now);
 		for (int i = 0; i < cur.size(); i++) {
 			trace(res, graph, path, start, cur.get(i));
 		}
-		path.remove(path.size() - 1);
+		path.remove(path.size() - 1);//Remove now here cause we have checked all the ways out from now.
 	}
 	
 	public static void main(String args[]) {
