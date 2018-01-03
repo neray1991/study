@@ -19,7 +19,7 @@ public class BackPackII {
 	public static int backPackII(int m, int[] A, int[] V) {
 		if (A == null || V == null || A.length == 0 || V.length == 0 || A.length != V.length)
 			return 0;
-		int[] dp = new int[m + 1];
+		int[] dp = new int[m + 1]; //Remember it's m+1 here
 		dp[0] = 0;
 		for (int i = 0; i < A.length; i++) {
 			for (int j = m; j >0; j--) {

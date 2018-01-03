@@ -8,8 +8,8 @@ Difficulty: Medium
 Source:     https://oj.leetcode.com/problems/find-peak-element/
 Notes:
 A peak element is an element that is greater than its neighbors.
-Given an input array where num[i] ï¿½ï¿½ï¿½ num[i+1], find a peak element and return its index.
-You may imagine that num[-1] = num[n] = -ï¿½ï¿½ï¿½.
+Given an input array where num[i] ¡Ù num[i+1], find a peak element and return its index.
+You may imagine that num[-1] = num[n] = -¡Þ.
 For example, in array [1, 2, 3, 1], 3 is a peak element and your function should return the index number 2.
 Find the peak element.
 */
