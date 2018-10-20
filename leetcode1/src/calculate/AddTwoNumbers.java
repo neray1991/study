@@ -20,9 +20,10 @@ import dataStructures.ListNode;
 public class AddTwoNumbers {
 	public ListNode addTwoNumbers(ListNode a, ListNode b) {
 		if (a == null && b == null) return null;
-		ListNode head = new ListNode(a.val + b.val);
+		int tmp = a.val + b.val;
+		ListNode head = new ListNode(tmp % 10);
 		ListNode prev = head;
-		int carry = 0;
+		int carry = tmp / 10;
 		a = a.next;
 		b = b.next;
 		while (a != null || b != null) {
@@ -45,7 +46,7 @@ public class AddTwoNumbers {
 	}
 	
 	public static void main (String args[]) {
-		ListNode a = new ListNode(1);
+		ListNode a = new ListNode(2);
 		a.next = new ListNode(2);
 		a.next.next = new ListNode(9);
 		

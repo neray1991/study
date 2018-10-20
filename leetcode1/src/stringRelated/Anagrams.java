@@ -16,7 +16,7 @@ import java.util.*;
 import java.util.Map.Entry;
 
 public class Anagrams {
-	public ArrayList<String> anagrams(String[] str) {
+	public static ArrayList<String> anagrams(String[] str) {
 		ArrayList<String> res = new ArrayList<String>();
 		HashMap<String, ArrayList<String>> group = new HashMap<String, ArrayList<String>>();
 		if (str.length == 0) return res;
@@ -34,8 +34,8 @@ public class Anagrams {
 		}
 		Iterator<Entry<String, ArrayList<String>>> itr = group.entrySet().iterator();
 		while(itr.hasNext()) {
-			Map.Entry<String, ArrayList<String>> entry = (Map.Entry<String, ArrayList<String>>) itr.next();
-			ArrayList<String> val = (ArrayList<String>) entry.getValue();
+			Entry<String, ArrayList<String>> entry = itr.next();
+			ArrayList<String> val = entry.getValue();
 			if (val.size() > 1)
 				res.addAll(val);
 		}
@@ -52,7 +52,7 @@ public class Anagrams {
 		                  "abadc",
 		                  "gdo",
 		                  "aaaad"};
-		ArrayList<String> res = new Anagrams().anagrams(input);
+		ArrayList<String> res = anagrams(input);
 		System.out.println(res);
 	}
 }
