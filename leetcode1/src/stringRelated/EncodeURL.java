@@ -4,7 +4,7 @@ import java.util.*;
 
 public class EncodeURL {
 	final String PREFIX = "http://tinyurl.com/";
-	final Map<String, String> map = new HashMap<>();
+	final Map<String, String> map = new HashMap<String, String>();
 	
 	public String encode(String longUrl) {
 		final String key = PREFIX + (map.size() + 1);

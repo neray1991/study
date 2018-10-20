@@ -32,10 +32,10 @@ public class FourSum {
 		int N = num.length;
 		if (N < 4) return res;
 		Arrays.sort(num);
-		for (int i = 0; i < N - 4; i++)
+		for (int i = 0; i < N - 3; i++)
 		{
 			if (i > 0 && num[i] == num[i-1]) continue;
-			for (int j = i + 1; j < N - 3; j++)
+			for (int j = i + 1; j < N - 2; j++)
 			{
 				if (j > i + 1 && num[j] == num [j - 1]) continue;
 				int twosum = target - num[i] - num[j];
