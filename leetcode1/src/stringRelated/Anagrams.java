@@ -20,15 +20,15 @@ public class Anagrams {
 		ArrayList<String> res = new ArrayList<String>();
 		HashMap<String, ArrayList<String>> group = new HashMap<String, ArrayList<String>>();
 		if (str.length == 0) return res;
-		for (int i = 0; i < str.length; i++) {
-			char[] tmp = str[i].toCharArray();
+		for (String si : str) {
+			char[] tmp = si.toCharArray();
 			Arrays.sort(tmp);
 			String s = String.valueOf(tmp);
 			if (group.containsKey(s))
-				(group.get(s)).add(str[i]);
+				(group.get(s)).add(si);
 			else {
 				ArrayList<String> t = new ArrayList<String>();
-				t.add(str[i]);
+				t.add(si);
 				group.put(s, t);
 			}
 		}

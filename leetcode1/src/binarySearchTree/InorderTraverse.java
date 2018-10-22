@@ -51,7 +51,7 @@ class Solution {
 				stk.push(node);
 				node = node.left;
 			}
-			if (stk.isEmpty()) return;
+		//	if (stk.isEmpty()) return;
 			node = stk.pop();
 			System.out.println(node.val);
 			node = node.right;

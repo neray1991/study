@@ -71,7 +71,9 @@ class Solution {
 				maxIdx = i;
 			} else {
 				if (candy == 1) {
+					System.out.println("maxVal="+maxVal+", i="+i+", maxIdx="+maxIdx);
 					if (maxVal <= i - maxIdx) {
+						//When ever ratings[i] <= rating[i-1], they set candy=1. So we need to add maxVal only if necessary.
 						++maxVal;
 						++res;
 					}
