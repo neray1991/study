@@ -43,8 +43,8 @@ class Solution {
 
 public class CompareVersion {
 	public static void main(String args[]) {
-		String a = new String("13.14");
-		String b = new String("13.2");
+		String a = new String("13.143");
+		String b = new String("13.5.1");
 		System.out.println(new Solution().compareVersion(a, b));
 	}
 }

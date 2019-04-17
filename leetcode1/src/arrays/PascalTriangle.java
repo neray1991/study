@@ -61,6 +61,9 @@ public class PascalTriangle {
 	public static void main(String args[]) {
 		System.out.println(PascalTriangle.pascalTriangle(5));
 		System.out.println(PascalTriangle.getRow(20));
+		System.out.println(Integer.MAX_VALUE);
+		System.out.println(Integer.MIN_VALUE);
+
 
 	}
 }

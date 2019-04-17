@@ -24,6 +24,7 @@ public class CountandSay {
 		StringBuffer s = new StringBuffer("1");
 		StringBuffer res = new StringBuffer();
 		while((--n) != 0) {
+			System.out.println("n="+n);
 			res.setLength(0);
 			int size = s.length();
 			int cnt = 1;
@@ -38,9 +39,10 @@ public class CountandSay {
  			}
 			res.append(cnt);
 			res.append(cur);
-			StringBuffer tmp = s;
+			//StringBuffer tmp = s;  Both ways work;
 			s = res;
-			res = tmp;
+			//res = tmp;
+			res = new StringBuffer();
 		}
 		return s.toString();
 	}

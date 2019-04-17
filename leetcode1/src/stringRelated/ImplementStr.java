@@ -38,8 +38,14 @@ public class ImplementStr {
 		while (i < n - 1) {
 			while (j > -1 && T.charAt(j) != T.charAt(i)) j = next[j];
 			++i; ++j;
-			if (i < n - 1 && j < n - 1 && T.charAt(j) == T.charAt(i)) next[i] = next[j];
+			if (i < n - 1 && T.charAt(j) == T.charAt(i)) next[i] = next[j];
 			else next[i] = j;
+			/*
+			if (j == -1 || T.charAt(i) == T.charAt(j))
+				next[++i] = ++j;
+			else
+				j = next[j];
+				*/
 		}
 	}
 	
@@ -60,8 +66,8 @@ public class ImplementStr {
 	}
 	
 	public static void main(String args[]) {
-		String haystack = "ababbbcaabaabca";
-		String needle = "aabaabca";
+		String haystack = "ababbbcaabaabaac";
+		String needle = "aabaacaac";
 		System.out.println(ImplementStr.implementStr_1(haystack, needle));
 		System.out.println(ImplementStr.implementStr_2(haystack, needle));
 	}

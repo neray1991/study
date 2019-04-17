@@ -54,5 +54,6 @@ public class Anagrams {
 		                  "aaaad"};
 		ArrayList<String> res = anagrams(input);
 		System.out.println(res);
+		System.out.println(Integer.MAX_VALUE+","+Integer.MIN_VALUE);
 	}
 }

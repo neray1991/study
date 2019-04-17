@@ -41,7 +41,7 @@ public class FindMininRotatedSortedArray {
 			else if (input[mid] < input[right])
 				right = mid;
 			else
-				left++;//Move left because we are gonna return left. Loop will over when left == right.
+				left++;//Move left because we are gonna return left. Loop will end when left == right.
 		}
 		return input[left];
 	}

@@ -50,7 +50,7 @@ class SolutionII {
 
 public class CombinationSumII {
 	public static void main(String args[]) {
-		int[] candidates = {2, 5, 7, 10, 4, 3, 6, 11, 8};
+		int[] candidates = {2, 5, 7, 10, 4, 3, 3, 2, 6, 11, 8};
 		List<List<Integer>> res = new SolutionII().combinationSum(candidates, 20);
 		for (List<Integer> path : res)
 			System.out.println(path);

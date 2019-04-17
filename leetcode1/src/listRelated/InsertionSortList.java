@@ -37,7 +37,7 @@ public class InsertionSortList {
 		ListNode input = RandomStruct.getRandomList(10, 20);
 		ListNode head = input;
 		while (head != null) {
-			System.out.println(head.val);
+			System.out.print(head.val+",");
 			head = head.next;
 		}
 		head = InsertionSortList.insertSortList(input);

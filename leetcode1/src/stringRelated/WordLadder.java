@@ -156,5 +156,6 @@ public class WordLadder {
 	//	dict.add("cog");
 	//	System.out.println(WordLadder.ladderLength(start, end, dict));
 		System.out.println(WordLadder.findLadders(start, end, dict));
+		System.out.println(start.substring(3));
 	}
 }

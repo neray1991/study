@@ -46,5 +46,8 @@ public class DataStreamMedian {
 	public static void main(String args[]) {
 		int[] num = {6,5,1,3,2,4,0};
 		System.out.println(Arrays.toString(DataStreamMedian.dataStreamMedian(num)));
+		final List<Integer> a= new ArrayList<Integer>();
+		a.add(5);
+		System.out.println(a);
 	}
 }

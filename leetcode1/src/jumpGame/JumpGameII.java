@@ -19,6 +19,7 @@ Solution: Jump to the position where we can jump farthest (index + A[index]) nex
 public class JumpGameII {
 	public static int jumpGame_0 (int[] A) {
 		int n = A.length;
+
 		int last = 0, cur = 0, res = 0;
 		for (int i = 0; i < n; i++) {
 			if (i > last) {//last indicates the farthest pos last step can reach.

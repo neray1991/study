@@ -27,7 +27,7 @@ class Solution {
 	public List<List<Integer>> combination(int n, int k) {
 		List<List<Integer>> res = new ArrayList<List<Integer>>();
 		List<Integer> comb = new ArrayList<Integer>();
-		combinationRe(0, n, k, comb, res);
+		combinationRe(1, n, k, comb, res);
 		return res;
 	}
 	void combinationRe(int start, int n, int m, List<Integer> comb, List<List<Integer>> res) {

@@ -23,7 +23,7 @@ public class DecodeWays {
 	public static int numDecodings(String s) {
 		if (s.length() == 0 || s.charAt(0) == '0') return 0;
 		int N = s.length();
-		int f0 = 1, f1 = 1;
+		int f0 = 0, f1 = 1;
 		for (int i = 1; i < N; i++) {
 			if (s.charAt(i) == '0') f1 = 0;
 			int num = s.charAt(i) - '0' + (s.charAt(i - 1) - '0') * 10;
@@ -39,7 +39,7 @@ public class DecodeWays {
 	
 	public static void main(String args[]) {
 		//String input = "123456789120102345673213";
-		String input = "12121";//if nothing goes wrong, this will be a fibonacci series
+		String input = "121020982231";//if nothing goes wrong, this will be a fibonacci series
 		System.out.println(DecodeWays.numDecodings(input));
 	}
 }

@@ -30,6 +30,6 @@ public class DivideTwoInt {
 	}
 	
 	public static void main(String args[]) {
-		System.out.println(DivideTwoInt.divide(655366666, 32767));
+		System.out.println(DivideTwoInt.divide(655366666, 34));
 	}
 }

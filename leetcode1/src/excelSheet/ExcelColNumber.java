@@ -31,8 +31,8 @@ public class ExcelColNumber {
 	}
 	
 	public static void main(String args[]) {
-		String input = "YSY";
+		String input = "YSYEZ";
 		System.out.println(ExcelColNumber.excelColNumber(input));
-		System.out.println(ExcelColTitle.excelColTitle(17419));
+		System.out.println(ExcelColTitle.excelColTitle(11775400));
 	}
 }

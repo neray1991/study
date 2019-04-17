@@ -27,14 +27,14 @@ class Solution {
 	public List<List<Integer>> combinationSum(int [] candidates, int target) {
 		List<List<Integer>> res = new ArrayList<List<Integer>>();
 		Arrays.sort(candidates);
-		ArrayList<Integer> path = new ArrayList<Integer>();
+		List<Integer> path = new ArrayList<Integer>();
 		combinationSumRe(candidates, target, 0, path, res);
 		return res;
 	}
 	
-	void combinationSumRe(int[] candidates, int target, int start, ArrayList<Integer> path, List<List<Integer>> res) {
+	void combinationSumRe(int[] candidates, int target, int start, List<Integer> path, List<List<Integer>> res) {
 		if (target == 0) {
-			ArrayList<Integer> p = new ArrayList<Integer>(path);
+			List<Integer> p = new ArrayList<Integer>(path);
 			res.add(p);
 			return;
 		}

@@ -48,5 +48,6 @@ public class BinarySearch {
     	//int[] A = {1,2,2,4,5,5};
     	int[] A = {1,2};
     	System.out.println(BinarySearch.findPosition(A, 2));
+    	System.out.println(Math.pow(1.1*1.1, 0.5) );
     }
 }

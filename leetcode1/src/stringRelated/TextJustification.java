@@ -69,5 +69,9 @@ public class TextJustification {
 				"This", "is", "an", "example", "of", "text", "justification."
 		};
 		System.out.println(TextJustification.fullJustify(words, 17));
+		Arrays.sort(words, String.CASE_INSENSITIVE_ORDER);
+		Arrays.asList(words);
+		for (String s : words)
+		System.out.println(s);
 	}
 }
